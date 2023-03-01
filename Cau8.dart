@@ -9,37 +9,38 @@ void main(List<String> args) {
     print("2 - Remove");
     print("3 - View");
     print("4 - Exit");
+    
 
-    String? choice=stdin.readLineSync();
+    String choice=stdin.readLineSync()!;
     
     if (choice == "1") {
-      print("Enter task:");
-      String? task = stdin.readLineSync();
-      //tasks.add(task);
-      print("Task added!");
+      print("Nhập thông tin:");
+      String task = stdin.readLineSync()!;
+      tasks.add(task);
+      print("Thêm thành công!");
     } else if (choice == "2") {
-      print("Enter task to remove:");
-      String? task = stdin.readLineSync();
+      print("Nhập thông tin:");
+      String task = stdin.readLineSync()!;
       if (tasks.contains(task)) {
         tasks.remove(task);
-        print("Task removed!");
+        print("Xóa thành công!");
       } else {
-        print("Task not found!");
+        print("Không tìm thầy!");
       }
     } else if (choice == "3") {
       if (tasks.isEmpty) {
-        print("No tasks!");
+        print("Không có dữ liệu!!");
       } else {
-        print("Tasks:");
+        print("Dữ liệu: ");
         for (int i = 0; i < tasks.length; i++) {
           print("${i + 1}. ${tasks[i]}");
         }
       }
     } else if (choice == "4") {
-      print("Goodbye!");
+      print("Bye Bye!");
       break;
     } else {
-      print("Invalid choice!");
+      print("Thao tác không hợp lệ!");
     }
   }
 }
